@@ -1,14 +1,13 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css',
+  selector: 'app-counter',
+  imports: [],
+  templateUrl: './counter.html',
+  styleUrl: './counter.css',
 })
-export class App {
-  count: number = 0;
+export class Counter {
+   count: number = 0;
   handleIncrement() {
     this.count = this.count + 1;
   }
