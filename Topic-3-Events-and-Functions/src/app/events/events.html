@@ -1,1 +1,11 @@
-<p>events works!</p>
+<h1>Event in Angular</h1>
+<button (click)="handleEvent($event)" class="btn">Click Event</button>
+<div (mouseenter)="handleEvent($event)" class="green"></div>
+<div (mouseleave)="handleEvent($event)" class="blue"></div>
+<input
+  type="text"
+  name="user"
+  (input)="handleEvent($event)"
+  (focus)="handleEvent($event)"
+  (blur)="handleEvent($event)"
+/>

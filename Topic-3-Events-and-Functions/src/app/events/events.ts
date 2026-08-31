@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './events.html',
   styleUrl: './events.css',
 })
-export class Events {}
+export class Events {
+  handleEvent(event: any) {
+    console.log('function called', event);
+    console.log('function called by event is', event.type);
+    console.log('value', event.target.value);
+  }
+}
