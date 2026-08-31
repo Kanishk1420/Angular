@@ -7,7 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './header.css',
 })
 export class Header {
+  otherfunction(){
+    alert("This is another function");
+  }
   handleclickevent(){
     console.log("You clicked");
+    this.otherfunction();
   }
 }
