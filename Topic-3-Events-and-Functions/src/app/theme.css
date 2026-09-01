@@ -1,0 +1,13 @@
+.header{
+    border: 1px solid red;
+}
+body {
+    background-color: aquamarine;
+}
+/* Load multiple css files in component */
+.but{
+    color: red;
+    padding: 10px;
+    width: 200px;
+    font-size: 20px;
+}
