@@ -1,0 +1,10 @@
+<h1>If Else | Control Flow</h1>
+<button (click)="changecolortored()">Change color to red</button>
+<button (click)="changecolortogreen()">Change color to green</button>
+<button (click)="toggle()">{{ display ? 'Change color to red' : 'Change color to green' }}</button>
+<!--Changing text through turnary operator-->
+@if (display == true) {
+  <div style="width: 200px; height: 200px; background-color: green"></div>
+} @else {
+  <div style="width: 200px; height: 200px; background-color: red"></div>
+}
