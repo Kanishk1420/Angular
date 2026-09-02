@@ -1,0 +1,26 @@
+<h1>Switch Case</h1>
+<input
+  type="text"
+  placeholder="name of the color"
+  id="lowercaseField"
+  pattern="[a-z]"
+  oninput="this.value = this.value.replace(/[^a-z]/g, '')"
+  (input)="handlecolor($event)"
+/>
+@switch (color) {
+  @case ('red') {
+    <div style="width: 200px; height: 200px; background-color: red"></div>
+  }
+  @case ('green') {
+    <div style="width: 200px; height: 200px; background-color: green"></div>
+  }
+  @case ('yellow') {
+    <div style="width: 200px; height: 200px; background-color: yellow"></div>
+  }
+  @case ('blue') {
+    <div style="width: 200px; height: 200px; background-color: blue"></div>
+  }
+  @default {
+    <div style="width: 200px; height: 200px; background-color: black"></div>
+  }
+}
