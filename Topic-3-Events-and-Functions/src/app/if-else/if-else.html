@@ -8,3 +8,19 @@
 } @else {
   <div style="width: 200px; height: 200px; background-color: red"></div>
 }
+<h1>Else If | Control Flow</h1>
+<button (click)="multipletoggle(1)">Orange</button>
+<button (click)="multipletoggle(2)">Aqua</button>
+<button (click)="multipletoggle(3)">Purple</button>
+<button (click)="multipletoggle(4)">Yellow</button>
+<input type="number" placeholder="Enter Number" (input)="handleInput($event)"/> 
+
+@if (color == 1) {
+  <div style="width: 200px; height: 200px; background-color: orange"></div>
+} @else if (color == 2) {
+  <div style="width: 200px; height: 200px; background-color: aqua"></div>
+} @else if (color == 3) {
+  <div style="width: 200px; height: 200px; background-color: purple"></div>
+} @else {
+  <div style="width: 200px; height: 200px; background-color: yellow"></div>
+}

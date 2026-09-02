@@ -17,4 +17,11 @@ export class IfElse {
   toggle(){
     this.display=!this.display
   }
+  color = 1;
+  multipletoggle(value: number){
+    this.color = value; 
+  }
+  handleInput(event:Event){
+    this.color = Number((event.target as HTMLInputElement).value);
+  }
 }
