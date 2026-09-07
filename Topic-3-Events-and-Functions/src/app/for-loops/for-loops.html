@@ -1,0 +1,17 @@
+<h1>for-loops works!</h1>
+<h2>{{ users[0] }}</h2>
+@for (user of users; track $index) {
+  <p>{{ user }}</p>
+}
+
+<hr />
+
+@for (item of students; track $index) {
+  <p>{{ item.name }}</p>
+  <button (click)="getName(item.Age, item.email)">Get Details</button>
+}
+<hr />
+@if (showDetails) {
+  <p>Age: {{ ShowAge }}</p>
+  <p>Email: {{ ShowEmail }}</p>
+}
