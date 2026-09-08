@@ -1,0 +1,10 @@
+<h1>{{title()}}</h1>
+<p>{{count()}}</p>
+<p>{{x}}</p>
+<button (click)="update_value_for_signals()">Increase Value for Signals</button>
+<button (click)="update_value_for_x()">Increase Value for X</button>
+<hr>
+<p>{{counter()}}</p>
+<button (click)="counter.set(counter()-1)">Decrement</button>
+<button (click)="counter.set(0)">Reset</button>
+<button (click)="counter.set(counter()+1)">Increment</button>
