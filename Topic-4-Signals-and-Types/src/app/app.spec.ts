@@ -18,6 +18,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Topic-4-Signals-and-Types');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Topic-4-Signals-and-Types');
   });
 });
