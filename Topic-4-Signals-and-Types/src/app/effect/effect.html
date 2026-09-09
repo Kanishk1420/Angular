@@ -1,0 +1,23 @@
+<h1>Effect in Angular</h1>
+<h2>{{ username() }}</h2>
+<button (click)="username.set('Kanishk')">Update Username</button>
+<hr />
+<button (click)="multipletoggle(1)">Red</button>
+<button (click)="multipletoggle(2)">Green</button>
+<button (click)="multipletoggle(3)">Aqua</button>
+<button (click)="multipletoggle(4)">Yellow</button>
+
+@switch (color()) {
+  @case (1) {
+    <div style="width: 200px; height: 200px; background-color: red"></div>
+  }
+  @case (2) {
+    <div style="width: 200px; height: 200px; background-color: green"></div>
+  }
+  @case (3) {
+    <div style="width: 200px; height: 200px; background-color: aqua"></div>
+  }
+  @default {
+    <div style="width: 200px; height: 200px; background-color: yellow"></div>
+  }
+}
