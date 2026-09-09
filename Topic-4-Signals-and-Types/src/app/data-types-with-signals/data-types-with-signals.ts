@@ -12,7 +12,7 @@ export class DataTypesWithSignals {
 
   //Explicit type annotation defining a signal that is both readable and writable
   withdata: WritableSignal<number | string | undefined | null> = signal(20); 
-
+  modals: WritableSignal<number> = signal<number>(20)
   //Computed signals are read-only wrappers (Signal interface)
   count: Signal<number> = computed(() => 10); 
 
@@ -21,5 +21,6 @@ export class DataTypesWithSignals {
     this.withdata.set('Hello');
     // this.count.set(80); 
     // This line is commented out because .set() does not exist on read-only computed signals
+    this.modals.update((val)=> val+1);
   }
 }
