@@ -1,12 +1,19 @@
 import { Component, signal } from '@angular/core';
-
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('Topic-6-Todo-List');
+  task = '';
+  taskList: { id: number; task: string }[] = [];
+  addTask() {
+    this.taskList.push({id:this.taskList.length+1,task:this.task})
+    this.task = '';
+  }
+  deleteTask(){
+    this.taskList.pop();
+  }
 }
