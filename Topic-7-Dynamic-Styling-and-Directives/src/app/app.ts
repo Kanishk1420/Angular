@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
+import { DynamicStyling } from './dynamic-styling/dynamic-styling';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [DynamicStyling],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
