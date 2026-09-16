@@ -1,0 +1,7 @@
+<h1>*ngIf Directives in Angular</h1>
+<div *ngIf="Login; else elseBlock">
+  <a href="" (click)="toogle()">Logout</a>
+</div>
+<ng-template #elseBlock>
+  <a href="/" (click)="toogle()">Login</a>
+</ng-template>

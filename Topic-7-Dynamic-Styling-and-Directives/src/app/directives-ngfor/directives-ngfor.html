@@ -1,1 +1,7 @@
-<h1>Directives</h1>
+<!-- Directives is a class that adds addtional behaviour or provide more powers to the html elements in your application -->
+<h1 *ngIf="show">Directives</h1>
+<button (click)="toogle()">Click to Hide</button>
+<h1>*ngFor Directives in Angular</h1>
+<ul>
+    <li *ngFor="let Students of studentsData">{{Students.name}} {{Students.age}}</li>
+</ul>
