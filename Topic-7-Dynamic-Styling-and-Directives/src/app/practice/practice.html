@@ -1,0 +1,27 @@
+<div class="parent">
+  @for (jobs of jobOpenings; track $index) {
+    <div class="card">
+      <div class="top">
+        <img [src]="jobs.brandLogo" [alt]="jobs.companyName" />
+        <button>Save</button>
+      </div>
+      <div class="center">
+        <h3>
+          {{ jobs.companyName }} <span>{{ jobs.datePosted }}</span>
+        </h3>
+        <h2>{{ jobs.post }}</h2>
+        <div class="tag">
+          <h4>{{ jobs.tag1 }}</h4>
+          <h4>{{ jobs.tag2 }}</h4>
+        </div>
+      </div>
+      <div class="bottom">
+        <div>
+          <h3>{{ jobs.pay }}</h3>
+          <p>{{ jobs.location }}</p>
+        </div>
+        <button>Apply Now</button>
+      </div>
+    </div>
+  }
+</div>
