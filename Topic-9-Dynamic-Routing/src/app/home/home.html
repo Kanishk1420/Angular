@@ -1,0 +1,7 @@
+<h1>Dynamic Routing</h1>
+<h2>@for (user of users; track $index) {
+  <a routerLink="user/{{user.id}}/{{user.name}}">
+    <p>{{user.name}}</p>
+  </a>
+}
+</h2>
