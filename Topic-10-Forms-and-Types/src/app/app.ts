@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { ReactiveForms } from './reactive-forms/reactive-forms';
-
+import { FormGroupingReactiveForms } from './form-grouping-reactive-forms/form-grouping-reactive-forms';
 
 @Component({
   selector: 'app-root',
-  imports: [ReactiveForms],
+  imports: [ReactiveForms, FormGroupingReactiveForms],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

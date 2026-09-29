@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
-Component({
-  selector: 'app-form-grouping-reactive-forms',
-  imports: [ReactiveFormsModule],
-  templateUrl: './form-grouping-reactive-forms.html',
-  styleUrl: './form-grouping-reactive-forms.css',
-})
 interface ProfileDisplay {
   name: string;
   email: string;
   password: string;
 }
+@Component({
+  selector: 'app-form-grouping-reactive-forms',
+  imports: [ReactiveFormsModule],
+  templateUrl: './form-grouping-reactive-forms.html',
+  styleUrl: './form-grouping-reactive-forms.css',
+})
 
 export class FormGroupingReactiveForms {
   displayform: ProfileDisplay | null = null;

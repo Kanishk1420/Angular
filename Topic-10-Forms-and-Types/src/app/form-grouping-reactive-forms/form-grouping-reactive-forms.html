@@ -11,7 +11,7 @@
   <button type="button" (click)="setValue()">Clear</button>
 </form>
 <div>
-  @if ('displayform') {
+  @if (displayform) {
     <p>Name: {{ displayform.name }}</p>
     <p>Email: {{ displayform.email }}</p>
     <p>Password: {{ displayform.password }}</p>
