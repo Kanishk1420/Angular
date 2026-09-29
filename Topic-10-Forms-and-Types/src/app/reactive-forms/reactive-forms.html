@@ -1,8 +1,10 @@
-<h1>Basic of React Forms</h1>
+<h1>Basic of Reactive Forms</h1>
 <form action="" method="post">
-    <input type="text" placeholder="Enter Name" [formControl]="name">
-    <br>
-    <input type="text" placeholder="Enter Password" [formControl]="password">
-   <button (click)="displayvalue()" type="button">Login</button>
-   <button (click)="setValues()" type="button">Clear Values in Field</button>
+  <input type="text" placeholder="Enter Name" [formControl]="name" />
+  <!--formControlName is use for binding the formControl need ReactiveFormsModule in ts file -->
+  <br />
+  <input type="text" placeholder="Enter Password" [formControl]="password" />
+  <button (click)="displayvalue()" type="button">Login</button>
+  <button (click)="setValues()" type="button">Clear Values in Field</button>
+  <p>{{displayName}} {{displayPassword}}</p>
 </form>

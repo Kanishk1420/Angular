@@ -1,0 +1,19 @@
+<h1>Form Grouping in Reactive Forms</h1>
+<form [formGroup]="profileform" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="name" placeholder="Enter name" />
+  <!--formControlName is use for binding the formControl under formGroup-->
+  <br />
+  <input type="text" formControlName="email" placeholder="Enter Email" />
+  <br />
+  <input type="password" formControlName="password" placeholder="Enter password" />
+  <br />
+  <button type="submit">Submit</button>
+  <button type="button" (click)="setValue()">Clear</button>
+</form>
+<div>
+  @if ('displayform') {
+    <p>Name: {{ displayform.name }}</p>
+    <p>Email: {{ displayform.email }}</p>
+    <p>Password: {{ displayform.password }}</p>
+  }
+</div>

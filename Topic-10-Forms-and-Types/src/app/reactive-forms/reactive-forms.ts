@@ -8,14 +8,20 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './reactive-forms.css',
 })
 export class ReactiveForms {
+displayName = '';
+displayPassword = '';
 name = new FormControl();
 password = new FormControl();
 displayvalue(){
   console.log(this.name.value);
   console.log(this.password.value);
+  this.displayName = this.name.value;
+  this.displayPassword = '*'.repeat(this.password.value.length);
 }
 setValues(){
   this.name.setValue('');
   this.password.setValue('');
+  this.displayName = '';
+  this.displayPassword = '';
 }
 }
