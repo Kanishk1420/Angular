@@ -1,15 +1,39 @@
 <h1>Form Grouping in Reactive Forms</h1>
 <form [formGroup]="profileform" (ngSubmit)="onSubmit()">
   <input type="text" formControlName="name" placeholder="Enter name" />
-  <!--formControlName is use for binding the formControl under formGroup-->
+  @if (profileform.get('name')?.invalid && profileform.get('name')?.touched) {
+    @if (profileform.get('name')?.errors?.['required']) {
+      <p>Name is required.</p>
+    }
+    @if (profileform.get('name')?.errors?.['minlength']) {
+      <p>Name must be at least 3 characters.</p>
+    }
+  }
   <br />
   <input type="text" formControlName="email" placeholder="Enter Email" />
+  @if (profileform.get('email')?.invalid && profileform.get('email')?.touched) {
+    @if (profileform.get('email')?.errors?.['required']) {
+      <p>Email is required.</p>
+    }
+    @if (profileform.get('email')?.errors?.['pattern']) {
+      <p>Enter a valid email address.</p>
+    }
+  }
   <br />
   <input type="password" formControlName="password" placeholder="Enter password" />
+  @if (profileform.get('password')?.invalid && profileform.get('password')?.touched) {
+    @if (profileform.get('password')?.errors?.['required']) {
+      <p>Password is required.</p>
+    }
+    @if (profileform.get('password')?.errors?.['minlength']) {
+      <p>Password must be at least 6 characters.</p>
+    }
+  }
   <br />
-  <button type="submit">Submit</button>
+  <button type="submit" [disabled]="profileform.invalid">Submit</button>
   <button type="button" (click)="setValue()">Clear</button>
 </form>
+
 <div>
   @if (displayform) {
     <p>Name: {{ displayform.name }}</p>
