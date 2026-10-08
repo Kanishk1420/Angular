@@ -1,0 +1,27 @@
+<h1>Templete Driven Forms</h1>
+
+<form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+  <input type="text" placeholder="Enter your Username" name="name" ngModel />
+  <br />
+  <input type="password" placeholder="Enter your Password" name="password" ngModel />
+  <br />
+  <select name="gender" ngModel>
+    <option value="">Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+  <br />
+  <input type="range" min="0" max="20" name="range" ngModel />
+  <br />
+  <button type="submit">Add User</button>
+</form>
+
+@if (userDetails) {
+  <div class="user-card">
+    <h3>User Details</h3>
+    <p><strong>Name: </strong> {{ userDetails.name }}</p>
+    <p><strong>Password: </strong> {{ userDetails.password }}</p>
+    <p><strong>Gender: </strong> {{ userDetails.gender }}</p>
+    <p><strong>Range: </strong> {{ userDetails.range }}</p>
+  </div>
+}
