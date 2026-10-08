@@ -1,26 +1,69 @@
 <h1>Templete Driven Forms</h1>
-
 <form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
-  <input type="text" placeholder="Enter your Username" name="name" ngModel />
+  <input
+    #name="ngModel"
+    type="text"
+    placeholder="Enter your Username"
+    name="name"
+    ngModel
+    required
+  />
+  @if (name.invalid && name.touched) {
+    <span style="color: red">Name is Required</span>
+  }
   <br />
-  <input type="password" placeholder="Enter your Password" name="password" ngModel />
+  <input
+    type="password"
+    #password="ngModel"
+    placeholder="Enter your Password"
+    name="password"
+    ngModel
+    required
+    minlength="5"
+    maxlength="20"
+  />
+  @if (password.invalid && password.touched) {
+    <span style="color: red">Please Enter Valid Password</span>
+  }
   <br />
-  <select name="gender" ngModel>
+  <input type="email" #email="ngModel" email placeholder="Enter email" name="email" ngModel />
+  <!-- email is used for Validation for email input -->
+  @if (email.invalid && email.touched) {
+    <span style="color: red">Please Enter Valid Email</span>
+  }
+  <br />
+  <input
+    type="text"
+    #address="ngModel"
+    pattern="[a-zA-Z0-9\s]+"
+    placeholder="Enter Address"
+    name="address"
+    ngModel
+  />
+  <!-- pattern is used for Validation for address input as regex -->
+  @if (address.invalid && address.touched) {
+    <span style="color: red">Please Enter Valid Address</span>
+  }
+  <br />
+  <select name="gender" ngModel required>
     <option value="">Select Gender</option>
     <option value="male">Male</option>
     <option value="female">Female</option>
   </select>
   <br />
-  <input type="range" min="0" max="20" name="range" ngModel />
+  <input type="range" min="0" max="20" name="range" [ngModel]="0" required />
+  <!-- Ngmodel= 0 is used to set the default range for it -->
   <br />
-  <button type="submit">Add User</button>
+  <button type="submit" [disabled]="userForm.invalid">Add User</button>
 </form>
 
 @if (userDetails) {
   <div class="user-card">
     <h3>User Details</h3>
     <p><strong>Name: </strong> {{ userDetails.name }}</p>
-    <p><strong>Password: </strong> {{ userDetails.password }}</p>
+    <p><strong>Password: </strong> {{ maskpassword(userDetails.password) }}</p>
+    <p><strong>Email: </strong> {{ userDetails.email }}</p>
+    <p><strong>Address: </strong> {{ userDetails.address }}</p>
     <p><strong>Gender: </strong> {{ userDetails.gender }}</p>
     <p><strong>Range: </strong> {{ userDetails.range }}</p>
   </div>
