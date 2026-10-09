@@ -1,0 +1,17 @@
+<button 
+  class="bg-amber-400 text-black rounded px-4 py-2 font-semibold text-sm cursor-pointer" 
+  routerLink="/">
+  ← Back
+</button>
+
+@if (employee) {
+  <div>
+    <h1>Name:{{ employee.name }}</h1>
+    <p><span>ID:</span> {{ employee.id }}</p>
+    <p><span>Email:</span> {{ employee.email }}</p>
+    <p><span>Department:</span> {{ employee.department }}</p>
+    <p><span>Status:</span> {{ employee.status ? 'Active' : 'Inactive' }}</p>
+  </div>
+} @else {
+  <p>Employee not found!</p>
+}

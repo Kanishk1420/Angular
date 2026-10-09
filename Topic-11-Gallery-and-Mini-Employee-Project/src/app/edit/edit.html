@@ -1,0 +1,70 @@
+<h1>Edit Employee</h1>
+
+@if (employeeForm) {
+  <form [formGroup]="employeeForm" (ngSubmit)="updateEmployee()">
+    
+    <!-- Name Input Field -->
+    <input type="text" placeholder="Enter Name" formControlName="name" />
+    @if (employeeForm.get('name')?.touched) {
+      @if (employeeForm.get('name')?.hasError('required')) {
+        <p style="color:red">Name is required!</p>
+      } @else if (employeeForm.get('name')?.hasError('minlength')) {
+        <p style="color:red">Name must be at least 3 characters.</p>
+      }
+    }
+    <br>
+
+    <!-- Email Input Field -->
+    <input type="email" placeholder="Enter Email" formControlName="email" />
+    @if (employeeForm.get('email')?.touched) {
+      @if (employeeForm.get('email')?.hasError('required')) {
+        <p style="color:red">Email is required!</p>
+      } @else if (employeeForm.get('email')?.hasError('pattern')) {
+        <p style="color:red">Enter a valid email!</p>
+      }
+    }
+    <br>
+
+    <!-- Department Dropdown Selector -->
+    <select id="roles" formControlName="department">
+      <option value="">-- Select Role --</option>
+      <option value="Developer">Developer</option>
+      <option value="HR">HR</option>
+      <option value="Manager">Manager</option>
+      <option value="Designer">Designer</option>
+    </select>
+    @if (employeeForm.get('department')?.invalid && employeeForm.get('department')?.touched) {
+      <p style="color:red">Please select a role!</p>
+    }
+    <br>
+
+    <!-- Status Dropdown Selector -->
+    <select id="status" formControlName="status">
+      <option value="">-- Select Status --</option>
+      <option value="true">Active</option>
+      <option value="false">Inactive</option>
+    </select>
+    @if (employeeForm.get('status')?.invalid && employeeForm.get('status')?.touched) {
+      <p style="color:red">Please select a status!</p>
+    }
+    <br>
+
+    <!-- Action Buttons -->
+    <div class="flex gap-2">
+      <button 
+        type="submit" 
+        [disabled]="employeeForm.invalid"
+        [class]="employeeForm.invalid ? 'bg-gray-300 text-gray-400 rounded px-4 py-2 font-semibold text-sm cursor-not-allowed opacity-60' : 'bg-amber-400 text-black rounded px-4 py-2 font-semibold text-sm cursor-pointer hover:bg-amber-500'" >
+        Update
+      </button>
+      
+      <button 
+        type="button" 
+        class="bg-amber-400 text-black rounded px-4 py-2 font-semibold text-sm cursor-pointer hover:bg-amber-500" 
+        routerLink="/" >
+        Cancel
+      </button>
+    </div>
+  </form>
+} 
+

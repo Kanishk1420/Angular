@@ -1,0 +1,26 @@
+<div class="flex flex-wrap p-4 justify-center gap-6">
+<h1 class="text-2xl">Employee Directory</h1>
+<button class="bg-amber-400 text-black rounded px-4 py-2 font-semibold text-sm cursor-pointer hover:bg-amber-500" routerLink="/add">Add New Employee</button>
+</div>
+<div>
+<table>
+    <tr>
+        <th>Sr.no</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+@for (employee of employees; track $index) {
+        <tr>
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{ employee.status ? 'Active' : 'Inactive' }}</td>
+            <td class="flex gap-2">
+                <button [routerLink]="['/display', employee.id]" class="bg-amber-400 text-black rounded px-4 py-2 font-semibold text-sm cursor-pointer hover:bg-amber-500" >View</button>
+                <button class="bg-amber-400 text-black rounded px-4 py-2 font-semibold text-sm cursor-pointer hover:bg-amber-500"
+                [routerLink]="['/edit', employee.id]">Edit</button>
+            </td>
+        </tr>
+    }
+</table>
+</div>
