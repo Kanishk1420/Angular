@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-// Injectabe are use to share one ts file info to many other files we wil study this later topics
+// Injectable are use to share one ts file info to many other files we wil study this later topics
 export interface Employee {
   id: number;
   name: string;

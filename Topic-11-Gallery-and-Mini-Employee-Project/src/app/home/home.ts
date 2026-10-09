@@ -15,6 +15,6 @@ export class Home {
 
   ngOnInit() {
     this.employees = this.employeeService.employees;
-    console.log('🏠 Home Employees:', this.employees);
+    console.log('Home Employees:', this.employees);
   }
 }

@@ -1,17 +1,50 @@
-<button 
-  class="bg-amber-400 text-black rounded px-4 py-2 font-semibold text-sm cursor-pointer" 
-  routerLink="/">
-  ← Back
-</button>
+<!-- Back Button -->
+<div class="p-4">
+  <button
+    class="bg-amber-400 text-black rounded px-4 py-2 font-semibold text-sm cursor-pointer hover:bg-amber-500"
+    routerLink="/">
+    ← Back
+  </button>
+</div>
 
 @if (employee) {
-  <div>
-    <h1>Name:{{ employee.name }}</h1>
-    <p><span>ID:</span> {{ employee.id }}</p>
-    <p><span>Email:</span> {{ employee.email }}</p>
-    <p><span>Department:</span> {{ employee.department }}</p>
-    <p><span>Status:</span> {{ employee.status ? 'Active' : 'Inactive' }}</p>
+  <div class="w-lg mt-1 p-6">
+    
+    <!-- Header -->
+    <h1 class="text-2xl font-bold text-gray-800 mb-4 pb-2">{{ employee.name }}</h1>
+
+    <!-- Info -->
+    <div class="flex flex-col gap-3 text-sm text-gray-700">
+
+      <div class="flex justify-between">
+        <span class="font-semibold text-gray-500">ID</span>
+        <span>{{ employee.id }}</span>
+      </div>
+
+      <div class="flex justify-between">
+        <span class="font-semibold text-gray-500">Email</span>
+        <span>{{ employee.email }}</span>
+      </div>
+
+      <div class="flex justify-between">
+        <span class="font-semibold text-gray-500">Department</span>
+        <span>{{ employee.department }}</span>
+      </div>
+
+      <div class="flex justify-between">
+        <span class="font-semibold text-gray-500">Status</span>
+        <span
+          [class]="employee.status
+            ? ' text-green-600 px-3 py-1 rounded-full text-xs font-semibold'
+            : ' text-red-500 px-3 py-1 rounded-full text-xs font-semibold'"
+        >
+          {{ employee.status ? 'Active' : 'Inactive' }}
+        </span>
+      </div>
+
+    </div>
   </div>
+
 } @else {
-  <p>Employee not found!</p>
+  <p class="text-center text-gray-400 mt-10">Employee not found!</p>
 }
