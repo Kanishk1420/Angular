@@ -1,1 +1,88 @@
+<!-- Images Grid -->
+<div class="flex flex-wrap gap-4 p-4 justify-around">
+  @for (images of paginatedImages; track $index) {
+    <div
+      (click)="openModal(images)"
+      class="cursor-pointer hover:scale-105 transition-transform duration-200"
+    >
+      <div class="h-40 w-44 bg-white rounded-xl overflow-hidden">
+        <img [src]="images.download_url" [alt]="images.author" class="h-full w-full object-cover" />
+      </div>
+      <h2 class="font-bold text-lg">{{ images.author }}</h2>
+    </div>
+  }
+</div>
 
+<!-- Pagination Controls -->
+<div class="flex items-center justify-center gap-2 mt-6">
+  <!-- Prev Button -->
+  <button
+    (click)="prevPage()"
+    [disabled]="currentPage === 1"
+    [class]="
+      currentPage === 1
+        ? 'bg-gray-300 text-gray-400 rounded px-4 py-2 font-semibold text-sm cursor-not-allowed opacity-60'
+        : 'bg-amber-400 text-black rounded px-4 py-2 font-semibold text-sm cursor-pointer hover:bg-amber-500'
+    "
+  >
+    Prev
+  </button>
+
+  <!-- Page Info -->
+  <p class="text-center text-black">Page {{ currentPage }} of {{ totalPages }}</p>
+
+  <!-- Next Button -->
+  <button
+    (click)="nextPage()"
+    [disabled]="currentPage === totalPages"
+    [class]="
+      currentPage === totalPages
+        ? 'bg-gray-300 text-gray-400 rounded px-4 py-2 font-semibold text-sm cursor-not-allowed opacity-60'
+        : 'bg-amber-400 text-black rounded px-4 py-2 font-semibold text-sm cursor-pointer hover:bg-amber-500'
+    "
+  >
+    Next
+  </button>
+</div>
+
+<!-- Modal Popup -->
+@if (selectedImage) {
+  <div
+    class="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
+    (click)="closeModal()"
+  >
+    <div
+      class="bg-white rounded-2xl p-6 w-96 shadow-2xl relative"
+      (click)="$event.stopPropagation()"
+    >
+      <!--Prevents modal closing when clicking inside-->
+
+      <!-- Close Button -->
+      <button
+        (click)="closeModal()"
+        class="absolute top-0 right-2 text-gray-500 hover:text-black text-xl font-bold cursor-pointer"
+      >
+        ✕
+      </button>
+
+      <!-- Image -->
+      <img
+        [src]="selectedImage.download_url"
+        [alt]="selectedImage.author"
+        class="w-full h-48 object-cover rounded-xl mb-4"
+      />
+
+      <!-- Info -->
+      <div class="flex flex-col gap-2 text-sm text-gray-700">
+        <p><span class="font-bold">ID:</span> {{ selectedImage.id }}</p>
+        <p><span class="font-bold">Author:</span> {{ selectedImage.author }}</p>
+        <p><span class="font-bold">Width:</span> {{ selectedImage.width }}px</p>
+        <p><span class="font-bold">Height:</span> {{ selectedImage.height }}px</p>
+        <p class="break-all"><span class="font-bold">URL:</span> {{ selectedImage.url }}</p>
+        <p class="break-all">
+          <span class="font-bold">Download:</span> {{ selectedImage.download_url }}
+        </p>
+      </div>
+    </div>
+  </div>
+}
