@@ -1,3 +1,15 @@
-<h1>Pass data in Child Component</h1>
-<!-- Passing Data Statically and Dynamically --> 
-<app-user user="Kanishk" [age]="age"></app-user> 
+<app-user user="Kanishk" [age]="age" [location]="location"></app-user>
+
+<!--Data passing through Dropdwon to app-user-->
+<select #ageSelect (change)="age = +ageSelect.value">
+  <option value="20">20</option>
+  <option value="40">40</option>
+  <option value="500">500</option>
+  <option value="1000">1000</option>
+</select>
+<select #locationselect (change)="location = locationselect.value">
+  <option value="Hyderabad">Hyderabad</option>
+  <option value="Bangalore">Bangalore</option>
+  <option value="Chennai">Chennai</option>
+  <option value="Mumbai">Mumbai</option>
+</select>

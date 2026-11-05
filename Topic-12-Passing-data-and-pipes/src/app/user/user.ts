@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class User {
   @Input() user:string=''; // It will receive the data
-  @Input() age: number = 0;   
+  @Input() age: number = 0;  
+  @Input() location:string = ''; 
 }

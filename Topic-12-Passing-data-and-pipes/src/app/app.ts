@@ -10,4 +10,5 @@ import { User } from './user/user';
 export class App {
   protected readonly title = signal('Topic-12-Passing-data-and-pipes');
   age = 20;
+  location = "Hyderabad";
 }
