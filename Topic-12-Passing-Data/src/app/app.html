@@ -13,3 +13,8 @@
   <option value="Chennai">Chennai</option>
   <option value="Mumbai">Mumbai</option>
 </select>
+
+<h1>Reuse Component</h1>
+@for (hobby of hobbies; track $index) {
+<app-hobbies [hobby]="hobby"></app-hobbies>
+}

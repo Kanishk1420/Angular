@@ -7,8 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './user.css',
 })
 export class User {
-  @Input() user:string=''; // It will receive the data
+  @Input() user:string=''; // It will receive the data and input is decorater
   @Input() age: number = 0;  
   @Input() location:string = '';
-  // Reusing Components 
 }
