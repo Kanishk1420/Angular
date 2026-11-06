@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
+import { BuiltInPipes } from './built-in-pipes/built-in-pipes';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [BuiltInPipes],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
