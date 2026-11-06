@@ -16,5 +16,10 @@
 
 <h1>Reuse Component</h1>
 @for (hobby of hobbies; track $index) {
-<app-hobbies [hobby]="hobby"></app-hobbies>
+  <app-hobbies [hobby]="hobby"></app-hobbies>
+}
+<h1>Passing Data From Child to Parent</h1>
+<app-skills (getskills)="handleskills($event)"></app-skills>
+@for (skil of skill; track $index) {
+  <h3>{{ skil }}</h3>
 }
