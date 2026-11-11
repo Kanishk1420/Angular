@@ -1,10 +1,11 @@
 <h2>{{ title | titlecase }}</h2>
+<!-- We use Pipes in Angular to transform the data -->
 <input type="text" (input)="name.set($event.target.value)">
 <h2>{{ name() | uppercase }}</h2>
 <hr/>
 <!-- Displaying the model directly -->
-<h3>I bought a {{Mobiledata.model | titlecase}}</h3>
+<h3>I bought a {{ Mobiledata.model | titlecase}}</h3>
 <p>Purchase Date: {{ Mobiledata.purchaseDate | date:'longDate' }}</p>
 <p>Price: {{ Mobiledata.amountPaid | currency:'INR':'symbol':'1.0-0' }}</p>
 <hr/>
-<h4>Today Date is {{today | date}}</h4>
+<h4>Today Date is {{ today | date}}</h4>

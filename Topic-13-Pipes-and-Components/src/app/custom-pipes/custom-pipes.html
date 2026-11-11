@@ -1,0 +1,8 @@
+<h1>Custom Pipe in Angular</h1>
+
+<!-- default rate (95) -->
+<h2>{{ amount | currencyConvertor }}</h2>
+<!-- custom rate passed as an argument -->
+<h2>{{ amount | currencyConvertor: 83 }}</h2>
+<!-- chained with the built-in currency pipe -->
+<h2>{{ amount | currencyConvertor | currency: 'INR' }}</h2>
