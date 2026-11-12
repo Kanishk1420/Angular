@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, OnChanges, Input, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, Input} from '@angular/core';
 
 @Component({
   selector: 'app-user',
