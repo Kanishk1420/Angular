@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, Input, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -6,20 +6,23 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   templateUrl: './user.html',
   styleUrl: './user.css',
 })
-export class User implements OnInit, OnDestroy {
-  name = "L";
-
+export class User implements OnChanges, OnInit, OnDestroy {
+  @Input() userName = '';
+  name = 'L';
   constructor() {
-    console.log("Start");
-    this.name = "Kanishk";
+    console.log('Start');
+    this.name = 'Kanishk';
   }
 
   ngOnInit() {
-    console.log("ngOnInit will run after constructor");
-    this.name = "Shigami";
+    console.log('ngOnInit will run after constructor');
+    this.name = 'Shigami';
   }
 
   ngOnDestroy() {
-    console.log("User: ngOnDestroy called");
+    console.log('User: ngOnDestroy called');
+  }
+  ngOnChanges() {
+    console.log('Change Detected');
   }
 }

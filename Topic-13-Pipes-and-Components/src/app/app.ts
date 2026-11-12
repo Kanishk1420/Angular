@@ -13,6 +13,13 @@ import { User } from './component-life-cycle/user/user';
 })
 export class App {
   protected readonly title = signal('Topic-13-Pipes-and-Components');
+  username = "Kanishk";
+  counter = 0;
+
+  changeName() {
+    this.counter++;
+    this.username = "Kanishk " + this.counter;
+  }
   isvisible = true;
   destroyChild(){
   this.isvisible = false;

@@ -1,8 +1,11 @@
 <h1>Pipes in Angular</h1>
 <app-built-in-pipes></app-built-in-pipes>
 <app-custom-pipes></app-custom-pipes>
+
 @if (isvisible) {
     <app-component-life-cycle></app-component-life-cycle>
-    <app-user></app-user>
+    <app-user [userName]="username"></app-user>
 }
-<button (click)="destroyChild()">Trigger NgonDestroy</button>
+
+<button (click)="changeName()">Change Name (ngOnChanges)</button>
+<button (click)="destroyChild()">Trigger (ngOnDestroy)</button>
